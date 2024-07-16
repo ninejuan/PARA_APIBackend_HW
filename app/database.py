@@ -2,10 +2,11 @@ from pymongo import MongoClient
 from dotenv import load_dotenv
 import os 
 
-env = os.environ
+load_dotenv()
 
 def createConnection():
-    client = MongoClient(f"{env.DB_PROTOCOL}://{env.DB_ID}:{env.DB_PW}@{env.DB_URL}")
+    protocol, id, pw, url = os.getenv('DB_PROTOCOL'), os.getenv('DB_ID'), os.getenv('DB_PW'), os.getenv('DB_URL')
+    client = MongoClient(f"{protocol}://{id}:{pw}@{url}")
     db = client['para4']
     print('Database Connected!')
     return db
