@@ -1,7 +1,9 @@
-from fastapi import APIRouter
+from fastapi import APIRouter, FastAPI, Header, HTTPException
 from pydantic import BaseModel
 from typing import Optional
+import database
 
+db = database.db
 sriMealRouter = APIRouter()
 
 @sriMealRouter.get("/")

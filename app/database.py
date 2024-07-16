@@ -11,3 +11,5 @@ def createConnection():
     print('Database Connected!')
     return db
 
+db = createConnection()
+
