@@ -1,9 +1,8 @@
 from fastapi import APIRouter, FastAPI, Header, HTTPException
 from pydantic import BaseModel
 from typing import Optional
-import database, requests
+import requests
 
-db = database.db
 sriMealRouter = APIRouter()
 
 # Sunrin Meal NPI EndPoint

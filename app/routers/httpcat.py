@@ -1,11 +1,7 @@
 from fastapi import APIRouter, FastAPI, Header, HTTPException
 from pydantic import BaseModel
 from typing import Optional
-import database
-
-db = database.db
-hCatRouter = APIRouter()
 
 @hCatRouter.get("/")
-async def get_http_cat():
+async def get_http_cat(code: int = 200):
     return {"message": "HTTP Cat"}
